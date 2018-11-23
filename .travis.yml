@@ -1,22 +1,22 @@
 language: cpp
 dist: xenial
 os:
-  - linux
+- linux
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-7  
+    - g++-7  
 compiler:
-  - g++-7
-  - gcc-7
+- g++-7
+- gcc-7
 
 branches:
   only:
-    - master
-    - "/feat\/.*/"
-    - "/test\/.*/"
-    - tmp
+  - master
+  - "/feat\/.*/"
+  - "/test\/.*/"
+  - tmp
 
 script: "mkdir -p build && cd build && cmake -DCMAKE_VERBOSE_MAKEFILE=1 .. && make && make test"
